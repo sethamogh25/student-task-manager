@@ -15,15 +15,16 @@ pipeline {
         }
 
         stage('Install Dependencies and Test') {
-            steps {
-                sh '''
-                    python3 --version
-                    pip3 --version
-                    pip3 install -r requirements.txt
-                    python3 -m py_compile app.py
-                '''
-            }
-        }
+    steps {
+        sh '''
+            python3 -m venv .venv
+            .venv/bin/python -m pip install --upgrade pip
+            .venv/bin/python -m pip install -r requirements.txt
+            .venv/bin/python -m py_compile app.py
+            .venv/bin/python -m unittest
+        '''
+    }
+}
 
         stage('Build Docker Image') {
             steps {
