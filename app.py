@@ -3,7 +3,7 @@ from flask import Flask, request, redirect
 app = Flask(__name__)
 
 tasks = [
-    {"id": 1, "title": "Complete CCA2 assignment", "done": False},
+    {"id": 1, "title": "Complete assignment", "done": False},
     {"id": 2, "title": "Learn Docker and Kubernetes", "done": False}
 ]
 
