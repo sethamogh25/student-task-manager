@@ -21,7 +21,7 @@ pipeline {
             .venv/bin/python -m pip install --upgrade pip
             .venv/bin/python -m pip install -r requirements.txt
             .venv/bin/python -m py_compile app.py
-            .venv/bin/python -m unittest
+            .venv/bin/python -m pytest -v
         '''
     }
 }
