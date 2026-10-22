@@ -55,7 +55,7 @@ pipeline {
                 sh '''
                     kubectl --kubeconfig=/var/lib/jenkins/.kube/config \
                         set image deployment/${K8S_DEPLOYMENT} \
-                        app=${DOCKER_IMAGE}:${BUILD_NUMBER}
+    student-task-manager=${DOCKER_IMAGE}:${BUILD_NUMBER}
                     kubectl --kubeconfig=/var/lib/jenkins/.kube/config \
                         rollout status deployment/${K8S_DEPLOYMENT} --timeout=120s
                 '''
